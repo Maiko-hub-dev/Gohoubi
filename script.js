@@ -4752,14 +4752,26 @@ const Js = ({ swiper: e, extendParams: s, on: t }) => {
   },
   ii = [Ls, Is, As, zs, ws, Ds, ks, $s, Gs, Bs, Xs, Vs, Rs, Ys, Ns, _s, Ks, Zs, Qs, Js, ei, ti, si];
 K.use(ii);
+
+/* ここに変更を加える */
 jQuery(function (e) {
   window.addEventListener("load", () => {
-    const p = document.querySelector(".js-loading"),
-      f = document.querySelector(".first-view");
-    (setTimeout(() => {
-      (p.classList.add("is-hidden"), f.classList.add("is-visible"));
-    }, 1500),
-      document.body.classList.add("is-loaded"));
+    const loading = document.querySelector(".js-loading");
+    const firstView = document.querySelector(".first-view");
+
+    setTimeout(() => {
+      if (loading) {
+        loading.classList.add("is-hidden");
+      }
+
+      if (firstView) {
+        firstView.classList.add("is-visible");
+      }
+    }, 1500);
+
+    document.body.classList.add("is-loaded");
+
+    // ここから下は既存のコードを残します
     let c = e(".js-first-view").outerHeight(),
       v = e(".pagetop");
     const o = e(".footer");
@@ -4769,7 +4781,7 @@ jQuery(function (e) {
           g = e(window).height(),
           b = o.offset().top;
         r > c ? v.fadeIn() : v.fadeOut();
-        const S = a.matches ? o.outerHeight() + 20 : o.outerHeight() + 13,
+        const S = window.innerWidth >= 768 ? o.outerHeight() + 20 : o.outerHeight() + 13,
           h = window.innerWidth >= 1024 ? "7%" : "2px";
         r + g > b ? v.css({ position: "absolute", bottom: S }) : v.css({ position: "fixed", bottom: h });
       }),
@@ -4819,19 +4831,45 @@ jQuery(function (e) {
   function n(p) {
     return new Promise((f) => setTimeout(f, p));
   }
+  // ここは書き換え
   window.addEventListener("load", async () => {
-    (e("#splash").delay(1500).fadeOut("slow"), e("#splash_logo").delay(1200).fadeOut("slow"));
-    const p = document.getElementById("splash"),
-      f = document.querySelector(".c-loading");
-    document.querySelector("#splash_logo");
-    const c = document.querySelector(".first-view");
-    (await n(2500), f.classList.add("is-hidden"), await n(1e3), f.classList.add("is-slide"), await n(3e3), p.classList.add("is-hidden"), await n(1500), c.classList.add("is-visible"));
+    const splash = document.getElementById("splash");
+    const loading = document.querySelector(".c-loading");
+    const firstView = document.querySelector(".first-view");
+
+    // ローディングがないページでは、FVを表示して終了
+    if (!splash && !loading) {
+      if (firstView) {
+        firstView.classList.add("is-visible");
+      }
+      return;
+    }
+
+    e("#splash").delay(1500).fadeOut("slow");
+    e("#splash_logo").delay(1200).fadeOut("slow");
+
+    await n(2500);
+
+    if (loading) {
+      loading.classList.add("is-hidden");
+    }
+
+    await n(1000);
+
+    if (loading) {
+      loading.classList.add("is-slide");
+    }
+
+    await n(3000);
+
+    if (splash) {
+      splash.classList.add("is-hidden");
+    }
+
+    await n(1500);
+
+    if (firstView) {
+      firstView.classList.add("is-visible");
+    }
   });
-  const a = window.matchMedia("(min-width: 1024px)"),
-    u = document.querySelector(".header__nav"),
-    d = document.querySelector(".header__btns");
-  function l(p) {
-    p.matches ? (u.classList.add("is-active"), (d.style.display = "none")) : (u.classList.remove("is-active"), (d.style.display = "block"));
-  }
-  (l(a), a.addEventListener("change", l));
 });

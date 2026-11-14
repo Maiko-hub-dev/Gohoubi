@@ -1,0 +1,199 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 768px) {
+  .corner-type {
+    width: 75;
+    margin: 0 auto;
+  }
+}
+.corner-type__inner {
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .corner-type__inner {
+    max-width: 746px;
+  }
+}
+.corner-list {
+  width: 100%;
+}
+.corner-list__inner {
+  padding: 1.25rem 0.9375rem 2.5rem;
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .corner-list__inner {
+    flex-direction: row;
+    padding: 0 0 10vh;
+    justify-content: space-between;
+    margin-top: 4.35rem;
+    max-width: 1080px;
+    margin-inline: auto;
+  }
+}
+.course-view__inner.first-view__inner {
+  height: 100vh;
+  background-color: antiquewhite;
+}
+@media screen and (min-width: 768px) {
+  .course:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 31.25rem;
+    background-image: url(./transparent-sea-C-hAdU2T.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    z-index: -1;
+  }
+}
+.course__wrapper {
+  margin-top: 5rem;
+}
+@media screen and (min-width: 768px) {
+  .course__wrapper {
+    margin-top: 0;
+    padding: 4rem 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .course__container {
+    padding: 0 0.9375rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .course__illust {
+    position: absolute;
+    background-image: url(./fishes-BHmWTkp_.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 0;
+    background-size: cover;
+    width: min(27.3125rem, 32%);
+    aspect-ratio: 437/201;
+    margin-top: 1.65rem;
+    margin-left: 6.35rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .course__fishes-illust {
+    position: absolute;
+    background-image: url(./fishes-to-right-B43GruLD.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: min(18.75rem, 32%);
+    aspect-ratio: 437/201;
+    margin-top: 0rem;
+    margin-left: 6.35rem;
+    bottom: -6rem;
+  }
+}
+.course__titles {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+}
+@media screen and (min-width: 768px) {
+  .course__titles {
+    margin: 0 auto;
+    padding: 0.25rem 0 0;
+  }
+}
+.course__title {
+  font-family: Lato, sans-serif;
+  font-size: 2rem;
+  line-height: 1.25;
+  color: #0d2936;
+  text-transform: capitalize;
+  text-align: center;
+  position: relative;
+  margin-top: 0rem;
+}
+@media screen and (min-width: 768px) {
+  .course__title {
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 0 0.25rem 0 0.125rem;
+  }
+}
+.course-view__inner.single-corner {
+  background-color: antiquewhite;
+}
+.corner__contents--jump {
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.pagination {
+  .page-numbers {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    font-family:
+      Noto Sans JP,
+      sans-serif;
+    border: 1px solid #c7b757;
+    text-decoration: none;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .page-numbers.current {
+    background-color: #c7b757;
+    color: #fff;
+  }
+
+  /* // 前へ・次へ共通 */
+  .prev,
+  .next {
+    position: relative;
+  }
+
+  /* // CSSで「く」の字の矢印を作成 */
+  .prev::before,
+  .next::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-top: 2px solid #c7b757;
+    border-right: 2px solid #c7b757;
+  }
+
+  /* // 前へ「く」 */
+  .prev::before {
+    transform: translate(-35%, -50%) rotate(-135deg);
+  }
+
+  /* // 次へ「〉」 */
+  .next::before {
+    transform: translate(-65%, -50%) rotate(45deg);
+  }
+}
+.corner__contents--jump.pagination.corner-type__page {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  width: 9.875rem;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .corner__contents--jump.pagination.corner-type__page {
+    margin-top: 4.875rem;
+    width: max(12rem, 20%);
+  }
+}

@@ -6,33 +6,33 @@
             <div class="swiper-wrapper view__wrapper">
               <div class="swiper-slide">
                 <picture>
-                  <source media="(max-width: 767px)" srcset="<?php echo esc_url(get_theme_file_uri("/images/common/sp/fv-sp.jpg")); ?>" />
-                  <img src="<?php echo esc_url(get_theme_file_uri("/images/common/first-view.jpg")); ?>" alt="美しい海でウミガメが泳いでいる" />
+                  <source media="(max-width: 767px)" srcset="<?php echo esc_url(get_theme_file_uri("/images-webp/first-view03@2x.webp")); ?>" />
+                  <img src="<?php echo esc_url(get_theme_file_uri("/images-webp/first-view03@2x.webp")); ?>" alt="美味しそうな焼肉が網に乗っている" />
                 </picture>
               </div>
               <div class="swiper-slide">
                 <picture>
-                  <source media="(max-width: 767px)" srcset="<?php echo esc_url(get_theme_file_uri("/images/common/sp/into-sea-sp.jpg")); ?>" />
-                  <img src="<?php echo esc_url(get_theme_file_uri("/images/common/into-sea.jpg")); ?>" alt="海でウミガメが自由に泳いでいる" />
+                  <source media="(max-width: 767px)" srcset="<?php echo esc_url(get_theme_file_uri("/image/restaurants@2x.jpg")); ?>" />
+                  <img src="<?php echo esc_url(get_theme_file_uri("/image/restaurants@2x.jpg")); ?>" alt="レストラン" />
                 </picture>
               </div>
               <div class="swiper-slide">
                 <picture>
-                  <source media="(max-width: 767px)" srcset="<?php echo esc_url(get_theme_file_uri("/images/common/sp/sea-ship-sp.jpg")); ?>" />
-                  <img src="<?php echo esc_url(get_theme_file_uri("/images/common/sea-ship.jpg")); ?>" alt="海でダイビングをしようとする人たちとその船" />
+                  <source media="(max-width: 767px)" srcset="<?php echo esc_url(get_theme_file_uri("/images-webp/course03.webp")); ?>" />
+                  <img src="<?php echo esc_url(get_theme_file_uri("/images-webp/course03.webp")); ?>" alt="プレミアムなお肉" />
                 </picture>
               </div>
               <div class="swiper-slide">
                 <picture>
-                  <source media="(max-width: 767px)" srcset="<?php echo esc_url(get_theme_file_uri("/images/common/sp/beach-side-sp.jpg")); ?>" />
-                  <img src="<?php echo esc_url(get_theme_file_uri("/images/common/beachside.jpg")); ?>" alt="綺麗なビーチサイド" />
+                  <source media="(max-width: 767px)" srcset="<?php echo esc_url(get_theme_file_uri("/images-webp/campaign01@2x.webp")); ?>" />
+                  <img src="<?php echo esc_url(get_theme_file_uri("/images-webp/campaign01@2x.webp")); ?>" alt="ようこそ" />
                 </picture>
               </div>
             </div>
           </div>
           <div class="view__title diving-title">
-            <h1 class="diving-title__main">diving</h1>
-            <div class="diving-title__sub">into the ocean</div>
+            <h1 class="diving-title__main">ごほうびビュッフェ</h1>
+            <div class="diving-title__sub">Treat&nbsp; Meets</div>
           </div>
         </div>
       </div>
@@ -41,407 +41,506 @@
           <div class="campaign__container">
             <div class="campaign__wrapper">
               <div class="campaign__head">
-                <h2 class="campaign__subtitle">キャンペーン</h2>
-                <h3 class="campaign__title common-title">campaign</h3>
+                <h2 class="campaign__subtitle">campaign</h2>
+                <h3 class="campaign__title common-title">キャンペーン</h3>
 
                 <div class="campaign__navigation">
-                  <div class="campaign-button-prev"></div>
-                  <div class="campaign-button-next"></div>
+                  <div class="campaign-button-prev campaign-btn"></div>
+                  <div class="campaign-button-next campaign-btn"></div>
                 </div>
               </div>
               <div class="campaign__contents contents__inner campaign__slider">
                 <div class="contents__inner swiper2">
                   <div class="swiper-wrapper swiper2-wrapper slide">
-                    <div class="swiper-slide slide-content campaign__swiper-slide">
-                      <img src="<?php echo esc_url(get_theme_file_uri("/images/common/diving-fish.jpg")); ?>" alt="豊かな海で南国の魚が泳いでいる" class="slide-content-img" />
-                      <div class="slide__block">
-                        <div class="slide__block--titles">
-                          <h4 class="slide__block-title">ライセンス講習</h4>
-                          <p class="slide__block-txt">ライセンス取得</p>
-                        </div>
+                    <!-- ここから表示 -->
+                     <?php
+  $campaign_query = new WP_Query([
+      'post_type'      => 'campaign',
+      'posts_per_page' => 8,
+      'post_status'    => 'publish',
+      'no_found_rows'  => true,
+  ]);
+  ?>
 
-                        <div class="slide__container">
-                          <p class="slide__text">全部コミコミ(お一人様)</p>
-                          <div class="slide__prices">
-                            <span class="slide__discount">¥56,000</span>
-                            <span class="slide__plice">¥46,000</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide slide-content campaign__swiper-slide">
-                      <img src="<?php echo esc_url(get_theme_file_uri("/images/common/harbor.jpg")); ?>" alt="美しい浜辺" class="slide-content-img" />
-                      <div class="slide__block">
-                        <div class="slide__block--titles">
-                          <h4 class="slide__block-title">体験ダイビング</h4>
-                          <p class="slide__block-txt">貸切体験ダイビング</p>
-                        </div>
+  <?php while ($campaign_query->have_posts()) : ?>
+    <?php $campaign_query->the_post(); ?>
 
-                        <div class="slide__container">
-                          <p class="slide__text">全部コミコミ(お一人様)</p>
-                          <div class="slide__prices">
-                            <span class="slide__discount">¥24,000</span>
-                            <span class="slide__plice">¥18,000</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide slide-content campaign__swiper-slide">
-                      <img src="<?php echo esc_url(get_theme_file_uri("/images/common/jelly-fish.jpg")); ?>" alt="夜の海でクラゲが光りながらが泳いでいる" class="slide-content-img" />
-                      <div class="slide__block">
-                        <div class="slide__block--titles">
-                          <h4 class="slide__block-title">体験ダイビング</h4>
-                          <p class="slide__block-txt">ナイトダイビング</p>
-                        </div>
+    <a
+      href="<?php echo esc_url(get_post_type_archive_link('campaign')); ?>"
+      class="swiper-slide slide-content campaign__swiper-slide"
+    >
+      <?php if (has_post_thumbnail()) : ?>
+        <?php
+        the_post_thumbnail('large', [
+            'class' => 'slide-content-img',
+        ]);
+        ?>
+      <?php endif; ?>
 
-                        <div class="slide__container">
-                          <p class="slide__text">全部コミコミ(お一人様)</p>
-                          <div class="slide__prices">
-                            <span class="slide__discount">¥10,000</span>
-                            <span class="slide__plice">¥8,000</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide slide-content">
-                      <img src="<?php echo esc_url(get_theme_file_uri("/images/common/float-div.jpg")); ?>" alt="海でファンダイビングをする人たち" class="slide-content-img" />
-                      <div class="slide__block">
-                        <div class="slide__block--titles">
-                          <h4 class="slide__block-title slide__block-title2">ファンダイビング</h4>
-                          <p class="slide__block-txt">貸切ファンダイビング</p>
-                        </div>
+      <div class="slide__block">
+        <div class="slide__block--titles">
+          <?php
+          $campaign_terms = get_the_terms(
+              get_the_ID(),
+              'campaign_category'
+          );
+          ?>
 
-                        <div class="slide__container">
-                          <p class="slide__text">全部コミコミ(お一人様)</p>
-                          <div class="slide__prices">
-                            <span class="slide__discount">¥20,000</span>
-                            <span class="slide__plice">¥16,000</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+          <?php if (!is_wp_error($campaign_terms) && !empty($campaign_terms)) : ?>
+            <h4 class="slide__block-title">
+              <?php echo esc_html($campaign_terms[0]->name); ?>
+            </h4>
+          <?php endif; ?>
 
-                    <div class="swiper-slide slide-content">
-                      <img src="<?php echo esc_url(get_theme_file_uri("/images/common/diving-fish.jpg")); ?>" alt="豊かな海で南国の魚が泳いでいる" class="slide-content-img" />
-                      <div class="slide__block">
-                        <div class="slide__block--titles">
-                          <h4 class="slide__block-title">ライセンス講習</h4>
-                          <p class="slide__block-txt">ライセンス取得</p>
-                        </div>
+          <p class="slide__block-txt">
+            <?php the_title(); ?>
+          </p>
+        
+        </div>
+        <p class="slide__block-txt">
+          <?php the_content(); ?>
+        </p>
+   
+      </div>
+    </a>
 
-                        <div class="slide__container">
-                          <p class="slide__text">全部コミコミ(お一人様)</p>
-                          <div class="slide__prices">
-                            <span class="slide__discount">¥56,000</span>
-                            <span class="slide__plice">¥46,000</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide slide-content">
-                      <img src="<?php echo esc_url(get_theme_file_uri("/images/common/harbor.jpg")); ?>" alt="美しい浜辺" class="slide-content-img" />
-                      <div class="slide__block">
-                        <div class="slide__block--titles">
-                          <h4 class="slide__block-title">体験ダイビング</h4>
-                          <p class="slide__block-txt">貸切体験ダイビング</p>
-                        </div>
+  <?php endwhile; ?>
 
-                        <div class="slide__container">
-                          <p class="slide__text">全部コミコミ(お一人様)</p>
-                          <div class="slide__prices">
-                            <span class="slide__discount">¥24,000</span>
-                            <span class="slide__plice">¥18,000</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide slide-content">
-                      <img src="<?php echo esc_url(get_theme_file_uri("/images/common/jelly-fish.jpg")); ?>" alt="夜の海でクラゲが光りながらが泳いでいる" class="slide-content-img" />
-                      <div class="slide__block">
-                        <div class="slide__block--titles">
-                          <h4 class="slide__block-title">体験ダイビング</h4>
-                          <p class="slide__block-txt">ナイトダイビング</p>
-                        </div>
-
-                        <div class="slide__container">
-                          <p class="slide__text">全部コミコミ(お一人様)</p>
-                          <div class="slide__prices">
-                            <span class="slide__discount">¥10,000</span>
-                            <span class="slide__plice">¥8,000</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide slide-content">
-                      <img src="<?php echo esc_url(get_theme_file_uri("/images/common/float-div.jpg")); ?>" alt="海でファンダイビングをする人たち" class="slide-content-img" />
-                      <div class="slide__block">
-                        <div class="slide__block--titles">
-                          <h4 class="slide__block-title slide__block-title2">ファンダイビング</h4>
-                          <p class="slide__block-txt">貸切ファンダイビング</p>
-                        </div>
-
-                        <div class="slide__container">
-                          <p class="slide__text">全部コミコミ(お一人様)</p>
-                          <div class="slide__prices">
-                            <span class="slide__discount">¥20,000</span>
-                            <span class="slide__plice">¥16,000</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+  <?php wp_reset_postdata(); ?>
                   </div>
                 </div>
                 <!-- more button  -->
                 <div class="common__btn-wrap campaign__viewmore">
-                  <a href="#" class="campaign__btn common__btn campaign__viewmore-btn">
-                    <span class="campaign__btn--text common__btn--txt">view&nbsp;</span><span class="campaign__btn--text common__btn--txt__down">more</span>
-                    <span class="common__btn--arrow"></span>
-                  </a>
+                    <a
+                      href="<?php echo esc_url(get_post_type_archive_link('campaign')); ?>"
+                      class="campaign__btn common__btn campaign__viewmore-btn"
+                    >
+                      <span class="campaign__btn--text common__btn--txt">view&nbsp;</span>
+                      <span class="campaign__btn--text common__btn--txt__down">more</span>
+                      <span class="common__btn--arrow"></span>
+                    </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="aboutus">
-        <div class="aboutus__inner inner inner--about">
-          <div class="aboutus__container">
-            <div class="aboutus__wrapper">
-              <div class="aboutus__head">
-                <h2 class="aboutus__subtitle">私たちについて</h2>
-                <h3 class="aboutus__title common-title">aboutus</h3>
-              </div>
-              <div class="aboutus__content">
-                <div class="aboutus__framework framework">
-                  <div class="aboutus__content-left">
-                    <picture>
-                      <source media="(max-width: 767px)" srcset="<?php echo esc_url(get_theme_file_uri("/images/common/sp/sea-sa-sp.jpg")); ?>" />
-                      <img src="<?php echo esc_url(get_theme_file_uri("/images/common/ocean1.jpg")); ?>" class="framework__img" alt="琉球瓦の上にシーサーが座っている" />
-                    </picture>
-                  </div>
-                  <div class="aboutus__content-right">
-                    <picture>
-                      <source media="(max-width: 767px)" srcset="<?php echo esc_url(get_theme_file_uri("/images/common/sp/ocean-sp.jpg")); ?>" />
-                      <img src="<?php echo esc_url(get_theme_file_uri("/images/common/ocean2.jpg")); ?>" class="framework__img" alt="サンゴ礁の海に泳ぐチョウハン" />
-                    </picture>
-                  </div>
-                </div>
-                <div class="aboutus__textcontainer">
-                  <h4 class="aboutus-content__textcontainer-title">Dive into<br class="aboutus__space" /><span class="aboutus__space"></span>the Ocean</h4>
-                  <div class="aboutus__messages">
-                   
-                      <p class="aboutus__message--txt">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。 <br />ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
-            
-                    <div class="aboutus__viewmore-button">
-                      <div class="aboutus__btn-wrap aboutus__viewmore">
-                        <a href="#" class="aboutus__btn">
-                          <span class="aboutus__btn--text common__btn--txt">view&nbsp;</span><span class="aboutus__btn--text common__btn--txt__down">more</span>
-                          <span class="aboutus__btn--arrow"></span>
-                        </a>
-                      </div>
+      <section class="corner">
+        <div class="corner__inner inner inner--corner">
+          <div class="corner__container">
+            <div class="corner__head">
+              <h2 class="corner__subtitle">corner</h2>
+              <h3 class="corner__title common-title">コーナー紹介</h3>
+            </div>
+            <div class="corner-type">
+               <div class="corner__types-illust"></div>
+            <div class="corner__wrapper">
+           <!-- ここにコンテンツが入る -->
+   
+                    <div class="corner__images">
+                      <img src="<?php echo esc_url(get_theme_file_uri("/image/festival@2x.jpg")); ?>" alt="" />
                     </div>
-                    <!--  aboutus__viewmoreボタン -->
+                    <div class="corner-type__contents">
+                      <p class="corner-type__content"><span>&#9733;</span>射的コーナーには、人気キャラクターあり!!</p>
+                      <p class="corner-type__content"><span>&#9733;</span>ヨーヨー釣りは５回につきもう一回おまけ！</p>
+                      <p class="corner-type__content"><span>&#9733;</span>トレーディングカードがもらえる！！</p>
+                      <p class="corner-type__content"><span>&#9733;</span>小さなお子様も楽しめるゲームをご用意！！</p>
+                    </div>
                   </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-        <div class="aboutus__sea-image"></div>
-      </section>
-      <section class="information">
-        <div class="information__inner inner inner--information">
-          <div class="information__container">
-            <div class="information__titles">
-              <h2 class="information__subtitle">ダイビング情報</h2>
-              <h3 class="information__title common-title">information</h3>
-            </div>
-            <div class="information__wrapper">
-              <div class="information__colorbox info-color js-color-slide">
-                <div class="info-colorbox"></div>
-                <img src="<?php echo esc_url(get_theme_file_uri("/images/common/ocean-butter.jpg")); ?>" alt="サンゴ礁の近くを泳ぐチョウハン" class="information__frame" />
-              </div>
-              <div class="information__content">
-                <div class="information__licence">
-                  <h4 class="information__title-sub">ライセンス講習</h4>
-                  <p class="information__description">当店はダイビングライセンス（Cカード）世界最大の教育機関PADIの「正規店」として店舗登録されています。<br />正規登録店として、安心安全に初めての方でも安心安全にライセンス取得をサポート致します。</p>
-                </div>
-                <div class="common__btn-wrap information__viewmore">
-                  <a href="#" class="information__btn common__btn information__viewmore-btn">
-                    <span class="information__btn--text common__btn--txt">view&nbsp;</span><span class="information__btn--text common__btn--txt__down">more</span>
-                    <span class="common__btn--arrow"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+
+            <!-- view more -->
+             <div class="blog__btn-wrap common__btn-wrap">
+  <a href="<?php echo esc_url(home_url('/corner/')); ?>"
+     class="common__btn blog__btn blog__viewmore-btn">
+    <span class="common__btn--txt blog__btn--txt">view&nbsp;</span>
+    <span class="common__btn--txt__down">more</span>
+    <span class="common__btn--arrow"></span>
+  </a>
+</div>
+        <!-- サイドバーはなし -->
+      </div></div>
         </div>
       </section>
-      <section class="blog">
-        <div class="blog__inner inner inner--blog">
-          <div class="blog__illust"></div>
-          <div class="blog__container">
-            <div class="blog__wrapper">
-              <div class="blog__titles">
-                <h2 class="blog__subtitle">ブログ</h2>
-                <h3 class="blog__title common-title">Blog</h3>
-              </div>
-              <div class="blog__cards">
-                <a href="#" class="blog__card">
-                  <div class="blog__card-images">
-                    <img src="<?php echo esc_url(get_theme_file_uri("/images/common/coral-leaf.jpg")); ?>" class="blog__card--image" alt="サンゴ礁" />
+<section class="course">
+  <div class="course__inner inner inner--course">
+    <div class="course__wrapper">
+
+      <div class="course__titles">
+        <h2 class="course__subtitle">course</h2>
+        <h3 class="common-title">コース</h3>
+      </div>
+
+      <div class="course__cards">
+        <?php
+        // 各タクソノミーから最新のコースを１件ずつ取得
+        // コースカテゴリー内のタームを表示順に指定
+        $course_terms = ['sweet', 'korian', 'premiumn'];
+
+        foreach ($course_terms as $index => $term_slug) :
+
+          $course_query = new WP_Query([
+            'post_type'      => 'course',
+            'posts_per_page' => 1,
+            'post_status'    => 'publish',
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+            'no_found_rows'  => true,
+            'tax_query'      => [
+              [
+                'taxonomy' => 'sweets',
+                'field'    => 'slug',
+                'terms'    => $term_slug,
+              ],
+            ],
+          ]);
+
+          $card_class = 'course__card';
+
+          if ($index === 1) {
+            $card_class .= ' course__card-next';
+          } elseif ($index === 2) {
+            $card_class .= ' course__card-third';
+          }
+
+          if ($course_query->have_posts()) :
+            while ($course_query->have_posts()) :
+              $course_query->the_post();
+        ?>
+
+              <a
+                href="<?php the_permalink(); ?>"
+                class="<?php echo esc_attr($card_class); ?>"
+              >
+                <div class="course__card-images">
+                  <?php if (has_post_thumbnail()) : ?>
+                    <?php
+                    the_post_thumbnail('medium_large', [
+                      'class' => 'course__card--image',
+                    ]);
+                    ?>
+                  <?php endif; ?>
+                </div>
+
+                <div class="course__card--contents">
+                  <div class="course__card--titles">
+                     <h2 class="course__type-content">
+                          <?php the_title(); ?>
+                      </h2>
+                    <?php
+                    // 投稿本文を取得
+                    $course_content = get_the_content();
+
+                    // 本文内の最初のh3から文字を取得
+                    $course_heading = '';
+
+                    if (preg_match('/<h3\b[^>]*>(.*?)<\/h3>/is', $course_content, $matches)) {
+                        $course_heading = trim(wp_strip_all_tags($matches[1]));
+                    }
+                    ?>
+
+                    <?php if ($course_heading !== '') : ?>
+                      <h3 class="course__type-content">
+                        <?php echo esc_html($course_heading); ?>
+                      </h3>
+                    <?php endif; ?>
                   </div>
-                  <div class="blog__card--contents">
-                    <div class="blog__card--titles">
-                      <time class="blog__card-date" datetime="2023-11-17">2023.11/17</time>
-                      <p class="blog__card-title">ライセンス取得</p>
-                    </div>
-                    <p class="blog__card--txt">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br class="blog__u-desktop" />ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-                  </div>
-                </a>
-                <a href="#" class="blog__card blog__card-next">
-                  <div class="blog__card-images">
-                    <img src="<?php echo esc_url(get_theme_file_uri("/images/common/Sea-turtle.jpg")); ?>" class="blog__card--image" alt="ウミガメ" />
-                  </div>
-                  <div class="blog__card--contents">
-                    <div class="blog__card--titles">
-                      <time class="blog__card-date" datetime="2023-11-17">2023.11/17</time>
-                      <p class="blog__card-title">ウミガメと泳ぐ</p>
-                    </div>
-                    <p class="blog__card--txt">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br class="blog__u-desktop" />ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-                  </div>
-                </a>
-                <a href="#" class="blog__card blog__card-third">
-                  <div class="blog__card-images">
-                    <img src="<?php echo esc_url(get_theme_file_uri("/images/common/Clownfish.jpg")); ?>" class="blog__card--image" alt="クマノミ" />
-                  </div>
-                  <div class="blog__card--contents">
-                    <div class="blog__card--titles">
-                      <time class="blog__card-date" datetime="2023-11-17">2023.11/17</time>
-                      <p class="blog__card-title">カクレクマノミ</p>
-                    </div>
-                    <p class="blog__card--txt">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br class="blog__u-desktop" />ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-                  </div>
-                </a>
-              </div>
-              <!-- view more -->
-              <div class="blog__btn-wrap common__btn-wrap">
-                <a href="#" class="common__btn blog__btn blog__viewmore-btn">
-                  <span class="common__btn--txt blog__btn--txt">view&nbsp;</span><span class="common__btn--txt__down">more</span>
-                  <span class="common__btn--arrow"></span>
-                </a>
-              </div>
-            </div>
-          </div>
+
+                  <p class="blog__card--txt">
+                    <?php
+                    echo esc_html(
+                      wp_trim_words(get_the_excerpt(), 60, '…')
+                    );
+                    ?>
+                  </p>
+                </div>
+              </a>
+
+        <?php
+            endwhile;
+          endif;
+
+          wp_reset_postdata();
+        endforeach;
+        ?>
+      </div>
+
+      <!-- view more -->
+      <div class="course__btn-wrap common__btn-wrap">
+        <?php
+        $course_archive_url = get_post_type_archive_link('course');
+        ?>
+
+        <?php if ($course_archive_url) : ?>
+          <a
+            href="<?php echo esc_url($course_archive_url); ?>"
+            class="common__btn course__btn course__viewmore-btn"
+          >
+            <span class="common__btn--txt course__btn--txt">view&nbsp;</span>
+            <span class="common__btn--txt__down">more</span>
+            <span class="common__btn--arrow"></span>
+          </a>
+        <?php endif; ?>
+      </div>
+
+    </div>
+  </div>
+</section>
+ <!-- ブログ -->
+
+<section class="blog">
+  <div class="blog__inner inner inner--blog">
+    <div class="blog__illust"></div>
+    <div class="blog__container">
+      <div class="blog__wrapper">
+        <div class="blog__titles">
+          <h2 class="blog__subtitle">blog</h2>
+          <h3 class="common-title">ブログ</h3>
         </div>
-        <div class="blog__fishes-illust"></div>
-      </section>
+
+        <div class="blog__cards">
+          <?php
+          // 表示したいカテゴリーのスラッグ
+          $blog_categories = ['experience', 'Community', 'activity'];
+
+          foreach ($blog_categories as $index => $category_slug) :
+
+            $blog_query = new WP_Query([
+              'post_type'      => 'post',
+              'posts_per_page' => 1,
+              'category_name'  => $category_slug,
+              'post_status'    => 'publish',
+              'orderby'        => 'date',
+              'order'          => 'DESC',
+              'no_found_rows'  => true,
+            ]);
+
+            if ($blog_query->have_posts()) :
+              while ($blog_query->have_posts()) :
+                $blog_query->the_post();
+
+                // 既存のCSSクラスを維持
+                $card_class = 'blog__card';
+
+                if ($index === 1) {
+                  $card_class .= ' blog__card-next';
+                } elseif ($index === 2) {
+                  $card_class .= ' blog__card-third';
+                }
+          ?>
+
+          <a href="<?php the_permalink(); ?>"
+             class="<?php echo esc_attr($card_class); ?>">
+
+            <div class="blog__card-images">
+              <?php if (has_post_thumbnail()) : ?>
+                <?php the_post_thumbnail('medium_large', [
+                  'class' => 'blog__card--image',
+                  'alt'   => esc_attr(get_the_title()),
+                ]); ?>
+              <?php else : ?>
+                <img
+                  src="<?php echo esc_url(get_theme_file_uri('/images/common/coral-leaf.jpg')); ?>"
+                  class="blog__card--image"
+                  alt="サンゴ礁"
+                />
+              <?php endif; ?>
+            </div>
+
+            <div class="blog__card--contents">
+              <div class="blog__card--titles">
+                <time
+                  class="blog__card-date"
+                  datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>">
+                  <?php echo esc_html(get_the_date('Y年m月d日')); ?>
+                </time>
+
+                <p class="blog__card-title">
+                  <?php the_title(); ?>
+                </p>
+              </div>
+
+              <p class="blog__card--txt">
+                <?php
+                echo esc_html(
+                  wp_trim_words(
+                    get_the_excerpt(),
+                    60,
+                    '…'
+                  )
+                );
+                ?>
+              </p>
+            </div>
+          </a>
+
+          <?php
+              endwhile;
+            endif;
+
+            wp_reset_postdata();
+
+          endforeach;
+          ?>
+        </div>
+
+        <!-- view more -->
+        <div class="blog__btn-wrap common__btn-wrap">
+          <?php
+          $blog_page_id = get_option('page_for_posts');
+          ?>
+          <?php if ($blog_page_id) : ?>
+            <a href="<?php echo esc_url(get_permalink($blog_page_id)); ?>"
+               class="common__btn blog__btn blog__viewmore-btn">
+              <span class="common__btn--txt blog__btn--txt">view&nbsp;</span>
+              <span class="common__btn--txt__down">more</span>
+              <span class="common__btn--arrow"></span>
+            </a>
+          <?php endif; ?>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="blog__fishes-illust"></div>
+</section>
+
       <section class="voice">
-        <div class="voice__inner inner inner--voice">
+        <div class="voice__inne r inner inner--voice">
           <div class="voice__container">
             <div class="voice__wrapper">
-              <div class="voice__titles">
-                <h2 class="voice__subtitle">お客様の声</h2>
-                <h3 class="voice__title common-title">voice</h3>
+  <div class="voice__titles">
+    <h2 class="voice__subtitle">voice</h2>
+    <h3 class="voice__title common-title">お客様の声</h3>
+  </div>
+
+  <?php
+  $voice_query = new WP_Query([
+    'post_type'      => 'voice',
+    'posts_per_page' => 2,
+    'post_status'    => 'publish',
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+    'no_found_rows'  => true,
+  ]);
+  ?>
+
+  <div class="voice__cards">
+    <?php if ($voice_query->have_posts()) : ?>
+      <?php while ($voice_query->have_posts()) : $voice_query->the_post(); ?>
+
+        <?php
+        // 投稿に設定されているターム名を取得
+        // lesson・meet・birthday が、それぞれ独立したタクソノミーの場合
+        $voice_labels = [];
+
+        foreach (['meet', 'birthday'] as $taxonomy) {
+          $terms = get_the_terms(get_the_ID(), $taxonomy);
+
+          if (!is_wp_error($terms) && !empty($terms)) {
+            foreach ($terms as $term) {
+              $voice_labels[] = $term->name;
+            }
+          }
+        }
+
+        // 年代・性別（カスタムフィールド名：voice_age）
+        $voice_age = get_post_meta(get_the_ID(), 'voice_age', true);
+
+        // 2枚目の装飾用クラス
+        $is_second = ($voice_query->current_post === 1);
+        ?>
+
+        <a
+          href="<?php the_permalink(); ?>"
+          class="voice__card"
+        >
+          <div class="voice__card--who">
+            <div class="voice__card--contents">
+              <div class="voice__card--titles<?php echo $is_second ? ' voice__card--titles2' : ''; ?>">
+                <div class="voice__card-heading voice__active<?php echo $is_second ? ' voice__active2' : ''; ?>">
+
+                  <?php if ($voice_age !== '') : ?>
+                    <p class="voice__card-age<?php echo $is_second ? ' voice__card-age-fan' : ''; ?>">
+                      <?php echo esc_html($voice_age); ?>
+                    </p>
+                  <?php endif; ?>
+
+                  <?php if (!empty($voice_labels)) : ?>
+                    <h4 class="voice__active-content<?php echo $is_second ? ' voice__active-content-fan' : ''; ?>">
+                      <?php echo esc_html(implode('／', array_unique($voice_labels))); ?>
+                    </h4>
+                  <?php endif; ?>
+
+                </div>
+
+                <h4 class="voice__card-title voice__card-title-next">
+                  <?php the_title(); ?>
+                </h4>
               </div>
-              <div class="voice__cards">
-                <a href="#" class="voice__card">
-                  <div class="voice__card--who">
-                    <div class="voice__card--contents">
-                      <div class="voice__card--titles">
-                        <div class="voice__card-heading voice__active">
-                          <p class="voice__card-age">20代(女性)</p>
-                          <h4 class="voice__active-content">ライセンス講習</h4>
-                        </div>
-                        <!-- ヘディングの横並び -->
-                        <h4 class="voice__card-title voice__card-title-next">ここにタイトルが入ります。ここにタイトル</h4>
-                        <!-- ここまでヘディングの左側 -->
-                      </div>
-                      <div class="js-color-slide voice__card--image">
-                        <div class="info-colorbox"></div>
-                        <img src="<?php echo esc_url(get_theme_file_uri("/images/common/woman.jpg")); ?>" class="info-color-image" alt="麦わらの女性" />
-                      </div>
-                    </div>
-                  </div>
-                  <p class="voice__card--txt">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。</p>
-                </a>
-                <!-- ここまでで１枚のカード -->
-                <a href="#" class="voice__card">
-                  <div class="voice__card--who">
-                    <div class="voice__card--contents">
-                      <div class="voice__card--titles voice__card--titles2">
-                        <div class="voice__card-heading voice__active voice__active2">
-                          <p class="voice__card-age voice__card-age-fan">30代(男性)</p>
-                          <h4 class="voice__active-content voice__active-content-fan">ファンダイビング</h4>
-                        </div>
-                        <h4 class="voice__card-title voice__card-title-next">ここにタイトルが入ります。ここにタイトル</h4>
-                      </div>
-                      <div class="js-color-slide voice__card--image">
-                        <div class="info-colorbox"></div>
-                        <img src="<?php echo esc_url(get_theme_file_uri("/images/common/man.jpg")); ?>" class="info-color-image" alt="いいねしている女性" />
-                      </div>
-                      <!-- ヘディングの横並び -->
-                      <!-- ここまでヘディングの左側 -->
-                    </div>
-                  </div>
-                  <p class="voice__card--txt">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。</p>
-                </a>
-              </div>
-              <!-- ボタン -->
-              <div class="voice__btn-wrap common__btn-wrap">
-                <a href="#" class="common__btn voice__btn voice__viewmore-btn">
-                  <span class="common__btn--txt voice__btn--txt">view&nbsp;</span><span class="common__btn--txt__down">more</span>
-                  <span class="common__btn--arrow"></span>
-                </a>
+
+              <div class="js-color-slide voice__card--image">
+                <div class="info-colorbox"></div>
+
+                <?php if (has_post_thumbnail()) : ?>
+                  <?php
+                  the_post_thumbnail('large', [
+                    'class' => 'info-color-image',
+                  ]);
+                  ?>
+                <?php else : ?>
+                  <img
+                    src="<?php echo esc_url(get_theme_file_uri('/images/common/woman.jpg')); ?>"
+                    class="info-color-image"
+                    alt=""
+                  />
+                <?php endif; ?>
               </div>
             </div>
+          </div>
+
+          <p class="voice__card--txt">
+            <?php
+            echo esc_html(
+              wp_trim_words(get_the_excerpt(), 120, '…')
+            );
+            ?>
+          </p>
+        </a>
+
+      <?php endwhile; ?>
+    <?php endif; ?>
+  </div>
+
+  <?php wp_reset_postdata(); ?>
+
+  <?php $voice_archive_url = get_post_type_archive_link('voice'); ?>
+
+  <?php if ($voice_archive_url) : ?>
+    <div class="voice__btn-wrap common__btn-wrap">
+      <a
+        href="<?php echo esc_url($voice_archive_url); ?>"
+        class="common__btn voice__btn voice__viewmore-btn"
+      >
+        <span class="common__btn--txt voice__btn--txt">view&nbsp;</span><span class="common__btn--txt__down">more</span>
+        <span class="common__btn--arrow"></span>
+      </a>
+    </div>
+  <?php endif; ?>
+</div>
             <div class="voice__illust"></div>
           </div>
         </div>
       </section>
-    
-      <section class="contact">
-        <div class="contact__illust"></div>
-        <div class="contact__inner inner inner--contact">
-          <div class="contact__container">
-            <div class="contact__wrapper">
-              <div class="contact__titles">
-                <h2 class="contact__head">
-                  <img src="<?php echo esc_url(get_theme_file_uri("/images/common/sp/codeups-sp-head.png")); ?>" alt="CodeUpsタイトル緑色" class="contact__title-green" />
-                </h2>
-                <div class="contact__descriptions">
-                  <div class="contact__content">
-                    <span class="contact__description">沖縄県那覇市1-1</span>
-                    <span class="contact__description contact__tel">TEL:<span class="contact__telphone">0120-000-0000</span></span>
-                    <span class="contact__description contact__time">営業時間:8:30-19:00</span>
-                    <span class="contact__description contact__time">定休日:毎週火曜日</span>
-                  </div>
-                  <div class="contact__map"></div>
-                </div>
-              </div>
-              <div class="contact__btns">
-                <div class="contact__btns--wrapper">
-                  <p class="contact__title-btn common-btn">contact</p>
-                  <h2 class="contact__subtitle">お問い合わせ</h2>
-                  <p class="contact__guide">ご予約・お問い合わせはコチラ</p>
-                  <!-- ボタン -->
-                  <div class="contact__btn-wrap common__btn-wrap">
-                    <a href="#" class="common__btn contact__btn contact__viewmore-btn">
-                      <span class="common__btn--txt contact__btn--txt">contact&nbsp;</span><span class="common__btn--txt__down">us</span>
-                      <span class="common__btn--arrow"></span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+<!-- questions呼び出し     -->
+<?php get_template_part('questions'); ?>
       <!-- トップへ戻る -->
       <div class="pagetop">
         <a href="#top">
           <span></span>
         </a>
       </div>
+<!-- questions呼び出し -->
+<?php get_template_part('/template-parts/questions'); ?>
 </main>
 <?php get_footer(); ?>
