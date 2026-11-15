@@ -36,6 +36,9 @@
     height: 100%;
   }
 }
+.contact-title.view__title {
+  width: 65%;
+}
 @media screen and (min-width: 768px) {
   .contact-title.view__title {
     margin-top: 2.75rem;
@@ -49,9 +52,11 @@
     Noto Sans JP,
     sans-serif;
   text-align: center;
+  padding: 0.5rem;
   width: 100%;
   font-weight: 400;
   transition: 2s ease-in;
+  background-color: #4b1c11;
 }
 @media screen and (min-width: 768px) {
   .contact__form p {
@@ -66,9 +71,10 @@
 }
 @media screen and (min-width: 768px) {
   .contact-title__main {
-    font-size: 5rem;
+    font-size: 3rem;
     letter-spacing: -0.03em;
     margin-top: 0;
+    border-radius: 1rem;
   }
 }
 .wpcf7 {

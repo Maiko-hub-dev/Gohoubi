@@ -112,6 +112,15 @@ if (is_page(['contact', 'contact-error', 'contact-thanks'])) {
         file_exists($css_path) ? filemtime($css_path) : '1.0.0'
     );
 }
+// 404ページ専用CSS
+if (is_404()) {
+    wp_enqueue_style(
+        'not-found-css',
+        get_theme_file_uri('/css/notFound-C9NWnPwT.css'),
+        [],
+        '1.0.0'
+    );
+}
     // Google Fonts
     wp_enqueue_style(
         'Rock',
