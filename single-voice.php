@@ -20,15 +20,51 @@
                  <?php while (have_posts()) : the_post(); ?>
             <div class="voice__types-illust"></div>
             <div <?php post_class('voice-type__wrapper'); ?>>
- 
-              <div class="voice-type__titles">
-                <time datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>" class="voice-type__date"> <?php echo esc_html(get_the_date('Y.m.d')); ?></time>
-                <h2><?php the_title(); ?></h2>
-              </div>
+              <!-- 投稿本文から取得する -->
+              <?php
+            $voice_content = get_the_content();
+            $voice_heading = '';
+
+            // 投稿本文から最初のH2を取得
+            if (preg_match('/<h2\b[^>]*>(.*?)<\/h2>/is', $voice_content, $matches)) {
+                $voice_heading = $matches[1];
+
+                // 本文側で同じ見出しが重複しないように削除
+                $voice_content = preg_replace(
+                    '/<h2\b[^>]*>.*?<\/h2>/is',
+                    '',
+                    $voice_content,
+                    1
+                );
+            }
+            ?>
+
+          <div class="voice-type__titles">
+            <time
+              datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>"
+              class="voice-type__date"
+            >
+              <?php echo esc_html(get_the_date('Y.m.d')); ?>
+            </time>
+
+            <?php if ($voice_heading !== '') : ?>
+              <h2><?php echo wp_kses_post($voice_heading); ?></h2>
+            <?php endif; ?>
+          </div>
               <div class="voice-type__article">
-                <img src="<?php echo esc_url(get_theme_file_uri("/images/common/coral-leaf.jpg")); ?>" alt="サンゴ礁" class="voice-type__article--img" />
-                <p class="voice-type__text"><?php the_content(); ?></p>
-              </div>
+                  <?php if (has_post_thumbnail()) : ?>
+                    <?php
+                    the_post_thumbnail('large', [
+                      'class' => 'voice-type__article--img',
+                    ]);
+                    ?>
+                  <?php endif; ?>
+
+                  <div class="voice-type__text">
+                   <!-- コンテントを表示 -->
+                    <?php echo apply_filters('the_content', $voice_content); ?>
+                  </div>
+                </div>
             <!-- 各カテゴリーへ遷移する -->
                 <?php
                 // voiceに紐づけたタクソノミーのスラッグを指定

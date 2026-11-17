@@ -3867,7 +3867,7 @@ body.is-loaded .sp-nav {
   object-fit: cover;
 }
 @media screen and (min-width: 768px) {
-  .sidebar.blog-sidebar {
+  .sidebar.common-sidebar {
     padding: 6.65rem 0 0 2.45rem;
   }
 }

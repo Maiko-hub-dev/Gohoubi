@@ -3140,7 +3140,6 @@ body.is-loaded .header__inner {
 .aside__article img {
   display: block;
   aspect-ratio: 121/90;
-  width: 46%;
   object-fit: cover;
 }
 @media screen and (min-width: 768px) {
@@ -3358,7 +3357,7 @@ body.is-loaded .header__inner {
 }
 @media screen and (min-width: 768px) {
   .voice-type__inner {
-    max-width: 1080px;
+    max-width: 746px;
   }
 }
 .voice-list {
@@ -3594,6 +3593,21 @@ body.is-loaded .header__inner {
     min-width: 7.25rem;
   }
 }
+.voice-type__titles {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.5rem 0;
+}
+.voice-type__titles .voice-type__date {
+  margin-left: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .voice-type__titles .voice-type__date {
+    margin-left: 1rem;
+  }
+}
 .voice__type-content {
   display: inline-block;
   color: #c7b757;
@@ -3673,6 +3687,21 @@ body.is-loaded .header__inner {
     object-fit: cover;
   }
 }
+.voice-type__article {
+  padding: 0.25rem;
+}
+@media screen and (min-width: 768px) {
+  .voice-type__article {
+    padding: 0.5rem;
+  }
+}
+.voice-type__article .voice-type__article--img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
 .voice-types__cards {
   display: flex;
   flex-direction: column;
@@ -3681,6 +3710,24 @@ body.is-loaded .header__inner {
   max-width: 600px;
   margin: 0 auto;
   gap: 2rem;
+}
+.voice-type__text {
+  margin-top: 2.5rem;
+}
+.voice-type__text p {
+  line-height: 1.5;
+  font-size: 1rem;
+  font-family:
+    Noto Sans JP,
+    sans-serif;
+  font-weight: 300;
+}
+@media screen and (min-width: 768px) {
+  .voice-type__text p {
+    line-height: 2;
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
+  }
 }
 @media screen and (min-width: 768px) {
   .voice-types__cards {
@@ -3771,5 +3818,10 @@ body.is-loaded .header__inner {
 @media screen and (min-width: 768px) {
   .voice__type--txt {
     padding: 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .sidebar.common-sidebar {
+    padding: 6.65rem 0 0 2.45rem;
   }
 }

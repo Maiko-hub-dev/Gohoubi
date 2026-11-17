@@ -1,4 +1,4 @@
-<aside class="sidebar blog-sidebar">
+<aside class="sidebar common-sidebar">
           
 <!-- 人気記事 -->
 <section class="sidebar__popular">
@@ -116,17 +116,20 @@
             <?php endif; ?>
 
             <div class="aside__list">
-
-            <span class="aside__age">
                 <?php
-                $voice_age = get_post_meta(get_the_ID(), 'voice_age', true);
-                echo esc_html($voice_age ?: 'お客様の声');
-                ?>
-            </span>
+            $voice_content = get_the_content();
+            $voice_heading = '';
 
+            if (preg_match('/<h4\b[^>]*>(.*?)<\/h4>/is', $voice_content, $matches)) {
+                $voice_heading = $matches[1];
+            }
+            ?>
+
+            <?php if ($voice_heading !== '') : ?>
             <p class="aside__voice">
-                <?php echo esc_html(get_the_title()); ?>
+                <?php echo wp_kses_post($voice_heading); ?>
             </p>
+            <?php endif; ?>
 
             <div class="voice__btn-wrap common__btn-wrap">
                 <a
