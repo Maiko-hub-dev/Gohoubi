@@ -1110,6 +1110,7 @@ body.is-loaded .sp-nav {
 
 .campaign__title.common-title {
   font-weight: 300;
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -2349,7 +2350,7 @@ body.is-loaded .sp-nav {
   padding: 1.25rem 1rem 0;
   width: 100%;
   transition: animation 0.5s ease;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 @media screen and (min-width: 768px) {
@@ -2392,7 +2393,7 @@ body.is-loaded .sp-nav {
 .blog__card.blog__card-next {
   padding: 1rem 1rem 0.25rem;
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 0rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -2547,7 +2548,7 @@ body.is-loaded .sp-nav {
 .voice__card--txt {
   color: #0d2936;
   line-height: 1.5;
-  padding: 1rem 0 0;
+  padding: 1rem;
   font-family:
     Noto Sans JP,
     sans-serif;

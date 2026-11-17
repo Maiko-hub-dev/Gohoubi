@@ -956,6 +956,7 @@ body.is-loaded .sp-nav {
 }
 .campaign__title.common-title {
   font-weight: 300;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .campaign__title.common-title {
@@ -1444,8 +1445,9 @@ body.is-loaded .sp-nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 333px));
   align-items: center;
+  justify-content: space-around;
   gap: 1rem;
-  margin: 1.5rem 0.375rem 0;
+  margin: 3.5rem 0.375rem 0;
 }
 @media screen and (min-width: 768px) {
   .blog__cards {
@@ -1500,7 +1502,7 @@ body.is-loaded .sp-nav {
 .blog__card.blog__card-next {
   padding: 1rem 1rem 0.25rem;
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 0rem;
 }
 @media screen and (min-width: 768px) {
   .blog__card.blog__card-next {
@@ -1779,7 +1781,7 @@ body.is-loaded .sp-nav {
   font-weight: 600;
   line-height: 1.1875;
   padding-bottom: 1rem;
-  margin-top: 0;
+  margin-top: 1rem;
 }
 @media screen and (min-width: 768px) {
   .voice__card-title {
@@ -1789,12 +1791,13 @@ body.is-loaded .sp-nav {
     font-weight: 400;
     padding-bottom: 0.25rem;
     line-height: 1.35;
+    margin-top: 0;
   }
 }
 .voice__card--txt {
   color: #0d2936;
   line-height: 1.5;
-  padding: 1rem 0 0;
+  padding: 1rem;
   font-family:
     Noto Sans JP,
     sans-serif;
@@ -1821,16 +1824,7 @@ body.is-loaded .sp-nav {
     aspect-ratio: 71/162;
   }
 }
-.voice__card--titles.voice__card--titles2 .voice__card-title {
-  margin-top: 0.125rem;
-  line-height: 1.4375;
-  padding-bottom: 0.125rem;
-}
-@media screen and (min-width: 768px) {
-  .voice__card--titles.voice__card--titles2 .voice__card-title {
-    margin-top: 0;
-  }
-}
+
 .price {
   width: 100%;
   margin-top: 4.5rem;
