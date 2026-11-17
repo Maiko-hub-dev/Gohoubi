@@ -18,59 +18,62 @@
       <div class="blog-list__inner">
         <div class="blog-type__inner">
           <div class="blog__types-illust"></div>
-          <div class="blog-list__wrapper">
-            <div class="blog-list__contents">
-           <!-- 書き換え -->
+    <div class="blog-list__wrapper">
+    <div class="blog-list__contents">
             <div class="contents__inner">
-  <?php if (have_posts()) : ?>
-    <?php while (have_posts()) : the_post(); ?>
-      <?php
-      $blog_content = get_the_content();
-      $blog_heading = '';
 
-      if (preg_match('/<h2\b[^>]*>(.*?)<\/h2>/is', $blog_content, $matches)) {
-        $blog_heading = wp_strip_all_tags($matches[1]);
-      }
-      ?>
+              <?php if (have_posts()) : ?>
+                <?php while (have_posts()) : the_post(); ?>
+                  <?php
+                  $blog_content = get_the_content();
+                  $blog_text = '';
 
-      <a href="<?php the_permalink(); ?>" class="blog__card">
-        <div class="blog__card-images">
-          <?php if (has_post_thumbnail()) : ?>
-            <?php the_post_thumbnail('full', ['class' => 'blog__card--image']); ?>
-          <?php else : ?>
-            <img
-              class="blog__card--image"
-              src="<?php echo esc_url(get_theme_file_uri('/images/noimage.jpg')); ?>"
-              alt="NoImage画像"
-            />
-          <?php endif; ?>
-        </div>
+                  if (preg_match('/<p\b[^>]*>(.*?)<\/p>/is', $blog_content, $matches)) {
+                    $blog_text = wp_strip_all_tags($matches[1]);
+                  }
+                  ?>
 
-        <div class="blog__card--contents">
-          <div class="blog__card--titles">
-            <time
-              class="blog__card-date"
-              datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>"
-            >
-              <?php echo esc_html(get_the_date('Y.m.d')); ?>
-            </time>
+                  <a href="<?php the_permalink(); ?>" class="blog__card">
+                    <div class="blog__card-images">
+                      <?php if (has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail('full', ['class' => 'blog__card--image']); ?>
+                      <?php else : ?>
+                        <img
+                          class="blog__card--image"
+                          src="<?php echo esc_url(get_theme_file_uri('/images/noimage.jpg')); ?>"
+                          alt="NoImage画像"
+                        />
+                      <?php endif; ?>
+                      </div>
 
-            <?php if ($blog_heading !== '') : ?>
-              <p class="blog__card--txt">
-                <?php echo esc_html($blog_heading); ?>
-              </p>
-            <?php endif; ?>
-          </div>
-        </div>
-      </a>
+                      <div class="blog__card--contents">
+                        <div class="blog__card--titles">
+                          <time
+                            class="blog__card-date"
+                            datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>"
+                          >
+                            <?php echo esc_html(get_the_date('Y.m.d')); ?>
+                          </time>
 
-    <?php endwhile; ?>
-  <?php else : ?>
-    <p>記事が投稿されていません</p>
-  <?php endif; ?>
-</div>
+                          <p class="blog__card--txt"><?php the_title(); ?></p>
+                        </div>
+
+                      <?php if ($blog_text !== '') : ?>
+                        <p class="blog__card--txt">
+                          <?php echo esc_html($blog_text); ?>
+                        </p>
+                      <?php endif; ?>
+                    </div>
+                  </a>
+
+                <?php endwhile; ?>
+              <?php else : ?>
+                <p>記事が投稿されていません</p>
+              <?php endif; ?>
+
             </div>
           </div>
+        </div>
           <!-- ページネーション -->
 
        <!-- ページネーション -->

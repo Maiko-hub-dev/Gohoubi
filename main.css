@@ -2321,7 +2321,6 @@ body.is-loaded .sp-nav {
 @media screen and (min-width: 768px) {
   .blog__card--txt {
     padding: 0.875rem 0.25rem 0 0;
-    aspect-ratio: 301/136;
   }
 }
 @media screen and (min-width: 768px) {
@@ -2728,6 +2727,24 @@ body.is-loaded .sp-nav {
     margin-top: 0;
   }
 }
+.breadcrumbs {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+.breadclumbs a {
+  position: relative;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+/* パンくず内の装飾がクリックを遮らないようにする */
+.breadclumbs::before,
+.breadclumbs::after,
+.breadclumbs *::before,
+.breadclumbs *::after {
+  pointer-events: none;
+}
 /* パンくずリストのCSS */
 .breadcrumb {
   display: flex;
@@ -2756,6 +2773,9 @@ body.is-loaded .sp-nav {
 
 .breadclumbs nav .breadcrumb li a {
   color: #a9a9a9;
+  position: relative;
+  z-index: 11;
+  pointer-events: auto;
 }
 
 /* 現在のページ */

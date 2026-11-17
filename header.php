@@ -44,11 +44,13 @@
           </a>
         </li>
         <li class="header__navigation navigation header__nav--link">
-          <a href="<?php echo esc_url(get_post_type_archive_link('corner')); ?>" class="navigation__link">
-            <span class="headeer__nav-aboutus"> <span class="navigation__eng">corner</span>
-            <span class="navigation__japan">コーナー</span>
-          </a>
-        </li>
+            <a href="<?php echo esc_url(home_url('/corner/')); ?>" class="navigation__link">
+              <span class="headeer__nav-aboutus">
+                <span class="navigation__eng">corner</span>
+                <span class="navigation__japan">コーナー</span>
+              </span>
+            </a>
+          </li>
         <li class="header__navigation header__nav--link3">
           <a href="<?php echo esc_url(get_post_type_archive_link('course')); ?>" class="navigation__link">
             <span class="navigation__eng">course</span>

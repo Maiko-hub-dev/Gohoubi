@@ -38,10 +38,9 @@
 
             <!-- view more -->
              <div class="blog__btn-wrap common__btn-wrap">
-  <a href="<?php echo esc_url(home_url('/corner/')); ?>"
+  <a href="<?php echo esc_url(home_url('')); ?>"
      class="common__btn blog__btn blog__viewmore-btn">
-    <span class="common__btn--txt blog__btn--txt">view&nbsp;</span>
-    <span class="common__btn--txt__down">more</span>
+    <span class="common__btn--txt blog__btn--txt">TOPへ戻る</span>
     <span class="common__btn--arrow"></span>
   </a>
 </div>

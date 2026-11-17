@@ -3,8 +3,8 @@
        <div class="first-view js-first-view blog-view is-visible">
         <div class="first-view__inner view blog-view__inner">
           <picture>
-            <source media="(max-width: 767px)" srcset="<?php echo esc_url(get_theme_file_uri("/image/fv-1.jpg")); ?>" />
-            <img src="<?php echo esc_url(get_theme_file_uri("/image/fv.jpg")); ?>" alt="" />
+            <source media="(max-width: 767px)" srcset="<?php echo esc_url(get_theme_file_uri("/image/fv.jpg")); ?>" />
+            <img src="<?php echo esc_url(get_theme_file_uri("/image/fv-1.jpg")); ?>" alt="" />
           </picture>
         </div>
         <div class="view__title diving-title blog-title">

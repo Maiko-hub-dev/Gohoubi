@@ -14,6 +14,14 @@
     max-width: 746px;
   }
 }
+.corner-title__main {
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .corner-title__main {
+    text-align: left;
+  }
+}
 .corner-list {
   width: 100%;
 }
