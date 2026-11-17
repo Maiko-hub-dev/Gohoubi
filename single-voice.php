@@ -4,12 +4,12 @@
        <div class="first-view js-first-view voice-view is-visible">
         <div class="first-view__inner view voice-view__inner">
           <picture>
-            <source media="(max-width: 767px)" srcset="<?php echo esc_url(get_theme_file_uri("/images/common/sp/voice^sp-fv.jpg")); ?>" />
-            <img src="<?php echo esc_url(get_theme_file_uri("/images/common/voice-fv.jpg")); ?>" alt="美しい海で泳ぐ人たち" />
+            <source media="(max-width: 767px)" srcset="<?php echo esc_url(get_theme_file_uri("/image/beige_sp.jpg")); ?>" />
+            <img src="<?php echo esc_url(get_theme_file_uri("/image/beige.jpg")); ?>" alt="美しい海で泳ぐ人たち" />
           </picture>
-        </div>
           <div class="view__title diving-title voice-title">
           <h1 class="voice-title__main"><?php the_title(); ?></h1>
+        </div>
         </div>
         <?php breadcrumbs(); ?>
      </div>

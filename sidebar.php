@@ -117,19 +117,40 @@
 
             <div class="aside__list">
                 <?php
-            $voice_content = get_the_content();
-            $voice_heading = '';
+                $voice_content = get_the_content();
+                $voice_heading = '';
 
-            if (preg_match('/<h4\b[^>]*>(.*?)<\/h4>/is', $voice_content, $matches)) {
-                $voice_heading = $matches[1];
-            }
-            ?>
+                // 本文から最初のh4の内容を取得
+                if (preg_match('/<h3\b[^>]*>(.*?)<\/h3>/is', $voice_content, $matches)) {
+                    $voice_heading = trim(wp_strip_all_tags($matches[1]));
+                }
+                ?>
 
-            <?php if ($voice_heading !== '') : ?>
-            <p class="aside__voice">
-                <?php echo wp_kses_post($voice_heading); ?>
-            </p>
-            <?php endif; ?>
+                <?php if ($voice_heading !== '') : ?>
+
+                    <p class="aside__voice">
+                        <?php echo esc_html($voice_heading); ?>
+                    </p>
+
+                <?php else : ?>
+
+                    <div class="aside__voice">
+                        <?php
+                        // h3がない場合は本文を表示
+                        $voice_text = trim(
+                            wp_strip_all_tags(
+                                strip_shortcodes($voice_content),
+                                true
+                            )
+                        );
+
+                        echo esc_html(
+                            wp_html_excerpt($voice_text, 45, '・・')
+                        );
+                        ?>
+                    </div>
+
+                <?php endif; ?>
 
             <div class="voice__btn-wrap common__btn-wrap">
                 <a

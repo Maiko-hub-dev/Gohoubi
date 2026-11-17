@@ -656,6 +656,10 @@ body.is-loaded .header__inner {
     padding: 0 0.5rem;
   }
 }
+.sidebar__list.aside {
+  padding: 1rem 0 0 0;
+}
+
 .slide__discount {
   display: inline-block;
   text-decoration: line-through #c94800;
@@ -3147,6 +3151,18 @@ body.is-loaded .header__inner {
     margin-top: 5rem;
   }
 }
+.aside__box:not(:first-child) {
+  margin-top: 2.5rem;
+  padding: 1rem 0;
+}
+.aside__container {
+  padding: 0.5rem 0 0 0;
+}
+@media screen and (min-width: 768px) {
+  .aside__box:not(:first-child) {
+    padding: 1rem 0 0 0;
+  }
+}
 @media screen and (min-width: 768px) {
   .aside__box:not(:first-child) {
     margin-top: 4.875rem;
@@ -3290,6 +3306,9 @@ body.is-loaded .header__inner {
   padding: 0.45rem 1rem;
   width: 2.5rem;
   height: 2.5rem;
+}
+.sidebar__list aside {
+  margin-top: 1.5rem;
 }
 .first-view.voice-view {
   height: 100%;
@@ -3721,10 +3740,11 @@ body.is-loaded .header__inner {
     Noto Sans JP,
     sans-serif;
   font-weight: 300;
+  margin-top: 1rem;
 }
 @media screen and (min-width: 768px) {
   .voice-type__text p {
-    line-height: 2;
+    line-height: 1.75;
     font-size: 1.25rem;
     letter-spacing: 0.04em;
   }
@@ -3823,5 +3843,16 @@ body.is-loaded .header__inner {
 @media screen and (min-width: 768px) {
   .sidebar.common-sidebar {
     padding: 6.65rem 0 0 2.45rem;
+  }
+}
+.aside__list p {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+@media screen and (min-width: 768px) {
+  .aside__list p {
+    font-size: 1.25rem;
+    line-height: 1.75;
   }
 }
